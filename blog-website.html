@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Umesh Blog</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .post {
+      background: white;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .post:hover {
+      background: #eaeaea;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    button {
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      background: #333;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Umesh Blog</h1>
+</header>
+
+<div class="container">
+
+  <!-- HOME PAGE -->
+  <div id="home">
+    <div class="post" onclick="openPost('post1')">
+      <h2>My First Blog</h2>
+      <p>This is a short description of my blog...</p>
+    </div>
+
+    <div class="post" onclick="openPost('post2')">
+      <h2>Learning AWS</h2>
+      <p>Sharing my AWS learning journey...</p>
+    </div>
+  </div>
+
+  <!-- BLOG POST 1 -->
+  <div id="post1" class="hidden">
+    <h2>My First Blog</h2>
+    <p>This is my first blog website. I built it using HTML, CSS, and JavaScript.</p>
+    <button onclick="goBack()">⬅ Back</button>
+  </div>
+
+  <!-- BLOG POST 2 -->
+  <div id="post2" class="hidden">
+    <h2>Learning AWS</h2>
+    <p>I started learning AWS and it's very interesting. I will share my journey here.</p>
+    <button onclick="goBack()">⬅ Back</button>
+  </div>
+
+</div>
+
+<script>
+  function openPost(postId) {
+    document.getElementById("home").style.display = "none";
+    document.getElementById(postId).style.display = "block";
+  }
+
+  function goBack() {
+    document.getElementById("home").style.display = "block";
+    document.getElementById("post1").style.display = "none";
+    document.getElementById("post2").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
